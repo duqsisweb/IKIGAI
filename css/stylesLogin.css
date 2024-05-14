@@ -1,0 +1,196 @@
+body{
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.containerLogin{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.containerLogo{
+    height: 100vh;
+}
+
+.containerLogo img{
+    width: 400px;
+    position: relative;
+    top: 130px;
+    left: 180px;
+    border-radius: 100%;
+    box-shadow: 6px 6px 20px #e75f05;
+    animation: animacion 6s infinite;
+}
+
+/* Seccion 2 */
+
+.containerForm{
+    text-align: center;
+    background-color: #198754;
+}
+
+.tituloBienvenidos{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 160px;
+    color: #ffffff;
+}
+
+.formularioLogin{
+    margin: 50px 100px;
+}
+
+.labelOne {
+    position: relative;
+    right: 190px;
+    top: 20px;
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin: 20px;
+    text-transform: capitalize;
+}
+
+.labelTwo {
+    position: relative;
+    right: 160px;
+    top: 20px;
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin: 20px;
+    text-transform: capitalize;
+}
+
+.inputLogin {
+    font-size: 1.1em;
+    line-height: 1.5;
+    height: 40px;
+    margin-top: 40px;
+    padding-left: 10px;
+    width: 500px;
+    border: 1px solid #0c0c0c;
+    border-radius: 3px;
+}
+
+.btnLogin{
+    margin-top: 60px;
+    width: 280px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 1px 5px 1px #000000;
+}
+
+.btnLogin:hover{
+    /* background-color: #000000; */
+    color: #198754;
+}
+
+.btnLogin:active{
+    box-shadow: 1px 0px 1px #000000;
+    transition: all 4s box-shadow;
+}
+
+
+@media only screen and (max-width: 2000px) and (min-width: 1600px){
+    .containerLogo img{
+        width: 600px;
+        position: relative;
+        top: 160px;
+        left: 200px;
+        border-radius: 100%;
+        box-shadow: 6px 6px 20px #e75f05;
+        animation: animacion 6s infinite;
+    }
+    
+    .formularioLogin{
+        margin: 80px 200px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1600px) and (min-width: 1000px){
+    .containerLogo img{
+        width: 400px;
+        position: relative;
+        top: 240px;
+        left: 200px;
+        border-radius: 100%;
+        box-shadow: 6px 6px 20px #e75f05;
+        animation: animacion 6s infinite;
+    }
+    
+    .formularioLogin{
+        margin: 80px 140px;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) and (min-width: 600px){
+    .containerLogo img{
+        width: 300px;
+        position: relative;
+        top: 180px;
+        left: 100px;
+        border-radius: 100%;
+        box-shadow: 6px 6px 20px #e75f05;
+        animation: animacion 6s infinite;
+    }
+
+    .tituloBienvenidos{
+        margin-top: 80px;
+    }
+
+    .labelOne {
+        position: relative;
+        right: 90px;
+        top: 20px;
+        margin: 20px;
+        
+    }
+    
+    .labelTwo {
+        position: relative;
+        right: 70px;
+        top: 20px;
+        margin: 20px;
+        
+    }
+
+    .inputLogin {
+        margin-top: 20px;
+        padding-left: 10px;
+        width: 300px;
+    }
+    
+    .formularioLogin{
+        margin: 10px 100px;
+    }
+}
+
+
+@keyframes animacion {
+    0%{
+        box-shadow: 4px 8px 10px #ff7b23;
+    }
+
+    60%{
+        box-shadow: 4px 8px 10px #c29006;
+    }
+
+    60%{
+        box-shadow: 4px 8px 10px #c98508;
+    }
+
+    80%{
+        box-shadow: 4px 8px 10px #de8303;
+    }
+
+    100%{
+        box-shadow: 4px 8px 10px #fa6502;
+    }
+}

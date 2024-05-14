@@ -1,0 +1,30 @@
+[04-Mar-2021 11:24:14 America/Chicago] PHP Warning:  fopen(imagenes/Firma.png): failed to open stream: No such file or directory in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/fpdf/fpdf.php on line 1259
+[04-Mar-2021 11:24:14 America/Chicago] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: imagenes/Firma.png in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/fpdf/fpdf.php:271
+Stack trace:
+#0 /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/fpdf/fpdf.php(1261): FPDF->Error('Can't open imag...')
+#1 /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/fpdf/fpdf.php(885): FPDF->_parsepng('imagenes/Firma....')
+#2 /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargarcertificado.php(73): FPDF->Image('imagenes/Firma....', 35, 188, 50, 'L')
+#3 {main}
+  thrown in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/fpdf/fpdf.php on line 271
+[16-Mar-2021 12:05:16 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/conexion.php on line 2
+[16-Mar-2021 12:05:17 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli::mysqli_connect_errno() in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/conexion.php:5
+Stack trace:
+#0 /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php(3): require()
+#1 {main}
+  thrown in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/conexion.php on line 5
+[26-Mar-2021 20:09:39 America/Chicago] PHP Parse error:  syntax error, unexpected 'Que' (T_STRING) in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargarcertificado.php on line 45
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 125
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 146
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 157
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 168
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 171
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 179
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 182
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 190
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 193
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 204
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 212
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 215
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 223
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 226
+[23-Apr-2021 11:54:46 America/Chicago] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home3/johfrey1/rrhh.fibernetsa.co/admin/pdf/descargardesprendible.php on line 234
