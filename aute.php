@@ -9,7 +9,7 @@ if ($_POST['login']) {
 	$password1=$_POST['password'];
 	$password=rtrim($password1);
 
-	$encabezado= "SELECT RTRIM(MV.CODUSUARIO) AS CODUSUARIO, RTRIM(MV.PASSWORD) AS CLAVE FROM CONTROL_OFIMAEnterprise.dbo.MTUSUARIO AS MV WHERE (MV.CODUSUARIO = '$usuario' AND MV.CODUSUARIO IN ('PRODRIGUEZ', 'VGUATIVA', 'YANIMERO', 'JCASILIMAS','YFGONZALEZ','SGUIILLEN')) AND MV.PASSWORD = '$password'";
+	$encabezado= "SELECT RTRIM(MV.CODUSUARIO) AS CODUSUARIO, RTRIM(MV.PASSWORD) AS CLAVE FROM CONTROL_OFIMAEnterprise.dbo.MTUSUARIO AS MV WHERE (MV.CODUSUARIO = '$usuario' AND MV.CODUSUARIO IN ('PRODRIGUEZ', 'VGUATIVA', 'YANIMERO', 'JCASILIMAS','YFGONZALEZ','SGUIILLEN','KPINILLA')) AND MV.PASSWORD = '$password'";
 	$resul = odbc_exec($conexion,$encabezado)or die(exit("Error al ejecutar consulta"));
 	$re=odbc_fetch_row($resul);    
 	$us=odbc_result($resul, 'CODUSUARIO');
