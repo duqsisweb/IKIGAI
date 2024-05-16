@@ -68,7 +68,8 @@ if (isset($_SESSION['usuario'])) {
 
 
 
-							$LINKD  = $objPHPExcel->getActiveSheet()->getCell('N' . $i)->getCalculatedValue();
+							// $LINKD  = $objPHPExcel->getActiveSheet()->getCell('N' . $i)->getCalculatedValue();
+							$DRIVE  = $objPHPExcel->getActiveSheet()->getCell('O' . $i)->getCalculatedValue();
 
 
 							// PARA LA FECHA
@@ -81,20 +82,20 @@ if (isset($_SESSION['usuario'])) {
 
 
 							// Obtén los valores de hora de las celdas Q y R
-$horaInicioExcel = $objPHPExcel->getActiveSheet()->getCell('Q' . $i)->getValue(); // Obtiene el valor sin formato
-$horaFinalExcel = $objPHPExcel->getActiveSheet()->getCell('R' . $i)->getValue(); // Obtiene el valor sin formato
+							$horaInicioExcel = $objPHPExcel->getActiveSheet()->getCell('Q' . $i)->getValue(); // Obtiene el valor sin formato
+							$horaFinalExcel = $objPHPExcel->getActiveSheet()->getCell('R' . $i)->getValue(); // Obtiene el valor sin formato
 
-// Ajuste de la zona horaria (5 horas)
-$horaInicioExcel += 5 / 24; // Suma 5 horas
-$horaFinalExcel += 5 / 24; // Suma 5 horas
+							// Ajuste de la zona horaria (5 horas)
+							$horaInicioExcel += 5 / 24; // Suma 5 horas
+							$horaFinalExcel += 5 / 24; // Suma 5 horas
 
-// Convierte los valores de hora en formato Excel a timestamps de PHP
-$timestampHoraInicio = PHPExcel_Shared_Date::ExcelToPHP($horaInicioExcel);
-$timestampHoraFinal = PHPExcel_Shared_Date::ExcelToPHP($horaFinalExcel);
+							// Convierte los valores de hora en formato Excel a timestamps de PHP
+							$timestampHoraInicio = PHPExcel_Shared_Date::ExcelToPHP($horaInicioExcel);
+							$timestampHoraFinal = PHPExcel_Shared_Date::ExcelToPHP($horaFinalExcel);
 
-// Formatea los timestamps en el formato de hora deseado para la base de datos
-$horaInicioFormatted = date("H:i:s", $timestampHoraInicio);
-$horaFinalFormatted = date("H:i:s", $timestampHoraFinal);
+							// Formatea los timestamps en el formato de hora deseado para la base de datos
+							$horaInicioFormatted = date("H:i:s", $timestampHoraInicio);
+							$horaFinalFormatted = date("H:i:s", $timestampHoraFinal);
 
 
 							$DESCRIP  = $objPHPExcel->getActiveSheet()->getCell('S' . $i)->getCalculatedValue();
@@ -102,8 +103,8 @@ $horaFinalFormatted = date("H:i:s", $timestampHoraFinal);
 
 
 							if ($TFORMValue != NULL and $CAPAC != NULL) {
-								$QryPrg = "INSERT INTO PLATCAPACITACIONES.dbo.Programacion (ID, NROPROG, TFORM, CAPACITACION, CAPACITADOR, ANIO, MES, USUARIO, FECCARGA, ESTADO, PRECIO, CANTIDADASIS, CUMPLEGAL, CATEGORIA, SUBTIPO, CANTIDADPROG, FECHA )
-								VALUES ('$Ser', '$NroProg', '$TFORMValue', '$CAPAC', '$CADOR', '$ANIO', '$MES', '$usu', GETDATE(), 1, 0, '$PASIS', '$LEGLValue', '$CATEG', '$TIPOS', $PROGR, '$fechaFormateada')";
+								$QryPrg = "INSERT INTO PLATCAPACITACIONES.dbo.Programacion (ID, NROPROG, TFORM, CAPACITACION, CAPACITADOR, ANIO, MES, USUARIO, FECCARGA, ESTADO, PRECIO, CANTIDADASIS, CUMPLEGAL, CATEGORIA, SUBTIPO, CANTIDADPROG, FECHA, Bitacora )
+								VALUES ('$Ser', '$NroProg', '$TFORMValue', '$CAPAC', '$CADOR', '$ANIO', '$MES', '$usu', GETDATE(), 1, 0, '$PASIS', '$LEGLValue', '$CATEG', '$TIPOS', $PROGR, '$fechaFormateada', '$DRIVE')";
 								$Dato = odbc_exec($conexion, $QryPrg);
 
 								if ($Dato) {
@@ -113,19 +114,19 @@ $horaFinalFormatted = date("H:i:s", $timestampHoraFinal);
 
 							// Utiliza la misma variable $NroProg en el segundo INSERT
 							if ($TFORMValue != NULL and $CAPAC != NULL) {
-// Ahora puedes usar $horaInicioFormatted y $horaFinalFormatted en tu consulta SQL
-$QryPrg2 = "INSERT INTO PLATCAPACITACIONES.dbo.CabeceraCap (NROPROG, FECHA, HINICIO, HFINAL, LUGAR, DESCRIPCION, USUARIO, FECACT)
+								// Ahora puedes usar $horaInicioFormatted y $horaFinalFormatted en tu consulta SQL
+								$QryPrg2 = "INSERT INTO PLATCAPACITACIONES.dbo.CabeceraCap (NROPROG, FECHA, HINICIO, HFINAL, LUGAR, DESCRIPCION, USUARIO, FECACT)
             VALUES ('$NroProg', '$fechaFormateada', '$horaInicioFormatted', '$horaFinalFormatted', '$LUGAR', '$DESCRIP', '$usu', GETDATE())";
 								$Dato2 = odbc_exec($conexion, $QryPrg2);
 								$NroProg++;
 								if ($Dato2) {
 									odbc_free_result($Dato2); // Libera los recursos de la consulta
-									?>
-												<script languaje="javascript">
-													window.location = "../view/upinformacion.php";
-													alert("¡Se cargo con exito la programación!");
-												</script>
-									<?php
+?>
+									<script languaje="javascript">
+										window.location = "../view/upinformacion.php";
+										alert("¡Se cargo con exito la programación!");
+									</script>
+						<?php
 								}
 							}
 						}

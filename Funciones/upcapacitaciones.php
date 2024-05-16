@@ -50,14 +50,12 @@ if (isset($_SESSION['usuario'])) {
 							$VALIDACION  = $objPHPExcel->getActiveSheet()->getCell('D' . $i)->getCalculatedValue();
 
 							if ($VALIDACION != "Usuario no existe") {
-								// Continuar con la inserción
-								//  si el valor leído es "INTERNA" o "EXTERNA" y asigna 1 o 2 respectivamente
+								
 								$TIPOUSUARIOValue = ($TIPOUSUARIO == "OBLIGATORIO") ? 1 : 2;
-								//  si el valor leído es "SI" o "NO" y asigna 1 o 0 respectivamente
 								$ASISTENCIAValue = ($ASISTENCIA == "SI") ? 1 : 0;
 
 								$NroProgc = $objPHPExcel->getActiveSheet()->getCell('B' . $i)->getCalculatedValue() + $Ser;
-								$CODIGOEMPL = $objPHPExcel->getActiveSheet()->getCell('D' . $i)->getCalculatedValue();
+								$CODIGOEMPL = $objPHPExcel->getActiveSheet()->getCell('C' . $i)->getCalculatedValue();
 								$APRUEBA = $objPHPExcel->getActiveSheet()->getCell('E' . $i)->getCalculatedValue();
 								$Observaciones  = $objPHPExcel->getActiveSheet()->getCell('F' . $i)->getCalculatedValue();
 

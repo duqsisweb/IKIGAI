@@ -466,7 +466,7 @@ class Funciones
 				break;
 
 			case 3:
-				return $Dat = odbc_exec($conexion, "SELECT AVG(APRUEBA) PROM FROM PLATCAPACITACIONES..Capacitaciones WHERE NROPRGC IN (SELECT DISTINCT NROPROG FROM PLATCAPACITACIONES.dbo.Programacion P WHERE ANIO = $Anio and MES = $Mes AND CATEGORIA = 1)");
+				return $Dat = odbc_exec($conexion, "SELECT AVG(APRUEBA) PROM FROM PLATCAPACITACIONES..Capacitaciones WHERE NROPRGC IN (SELECT DISTINCT NROPROG FROM PLATCAPACITACIONES.dbo.Programacion P WHERE ANIO = $Anio and MES = $Mes AND SUBTIPO = 10)");
 				break;
 
 			case 4:
